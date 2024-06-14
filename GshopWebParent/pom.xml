@@ -10,17 +10,35 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gshop</groupId>
-	<artifactId>GshopCommon</artifactId>
+	<artifactId>GshopWebParent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>GshopCommon</name>
-	<description>Bibliothèque commune</description>
+	<name>GshopWebParent</name>
+	<packaging>pom</packaging>
+	<description>Parent spring web project</description>
 	<properties>
 		<java.version>15</java.version>
 	</properties>
+
+	<modules>
+		<module>GshopBackend</module>
+		<module>GshopFrontend</module>
+	</modules>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

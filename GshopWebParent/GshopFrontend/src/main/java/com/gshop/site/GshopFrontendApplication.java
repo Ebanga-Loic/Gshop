@@ -1,13 +1,13 @@
-package com.gshop;
+package com.gshop.site;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GshopCommonApplication {
+public class GshopFrontendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GshopCommonApplication.class, args);
+		SpringApplication.run(GshopFrontendApplication.class, args);
 	}
 
 }
