@@ -21,13 +21,12 @@
 	/* Couleur du texte de l'élément actif */
 }
 
-
 *.icon-white {
 	color: white
 }
 
 *.icon-silver {
-	color:#1a237e;
+	color: silver
 }
 
 *.icon-green {
