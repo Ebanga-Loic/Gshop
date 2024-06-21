@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.gshop.admin.user.AbstractExporter;
+import com.gshop.admin.AbstractExporter;
 import com.gshop.common.entity.User;
 import com.lowagie.text.Document;
 import com.lowagie.text.Font;
@@ -21,7 +21,7 @@ import com.lowagie.text.pdf.PdfWriter;
 public class UserPdfExporter extends AbstractExporter {
 
 	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
-		super.setResponseHeader(response, "application/pdf", ".pdf");
+		super.setResponseHeader(response, "application/pdf", ".pdf", "users_");
 		
 		Document document = new Document(PageSize.A4);
 		PdfWriter.getInstance(document, response.getOutputStream());

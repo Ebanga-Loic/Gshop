@@ -1,4 +1,4 @@
-package com.gshop.admin.user;
+package com.gshop.admin.user.controller;
 
 import java.io.IOException;
 
@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gshop.admin.FileUploadUtil;
 import com.gshop.admin.security.ShopmeUserDetails;
+import com.gshop.admin.user.UserService;
 import com.gshop.common.entity.User;
 
 
@@ -31,7 +32,7 @@ public class AccountController {
 		User user = service.getByEmail(email);
 		model.addAttribute("user", user);
 		
-		return "account_form";
+		return "users/account_form";
 		
 	}
 	
