@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0">
-
-	<title>Bienvenue Gshop</title>
-</head>
+<head th:replace="fragments :: page_head('GShop', 'none')" />
 
 <body>
 	<div class="container-fluid">
+		<div th:replace="navigation :: header_menu"></div>
+		<div th:replace="navigation :: search_nav"></div>
 		<div>
-			<h1>Gshop e-Commerce</h1>
-			Bienvenue
+			<h1>Shopping by Categories</h1>
 		</div>
-	</div>
 
+		<div class="row">
+			<div class="col-sm-2" th:each="cat : ${listCategories}">
+				<div><img th:src="@{${cat.imagePath}}" width="80" /></div>
+				<div>
+					<a th:href="@{'/c/' + ${cat.alias}}">[[${cat.name}]]</a>
+				</div>
+			</div>
+		</div>
+
+		<div th:replace="navigation :: footer_menu"></div>
+	</div>
 </body>
 
 </html>
