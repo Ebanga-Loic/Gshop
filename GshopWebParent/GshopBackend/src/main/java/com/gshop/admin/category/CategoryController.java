@@ -19,7 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gshop.admin.FileUploadUtil;
 import com.gshop.common.entity.Category;
-
+import com.gshop.common.exception.CategoryNotFoundException;
 
 @Controller
 public class CategoryController {

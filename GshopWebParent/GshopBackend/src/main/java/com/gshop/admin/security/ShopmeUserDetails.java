@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.gshop.common.entity.Role;
 import com.gshop.common.entity.User;
 
-
 public class ShopmeUserDetails implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private User user;

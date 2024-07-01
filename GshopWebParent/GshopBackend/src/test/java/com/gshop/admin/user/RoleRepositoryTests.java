@@ -13,7 +13,6 @@ import org.springframework.test.annotation.Rollback;
 
 import com.gshop.common.entity.Role;
 
-
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)

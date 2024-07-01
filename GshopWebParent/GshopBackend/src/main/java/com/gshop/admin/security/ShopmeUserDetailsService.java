@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import com.gshop.admin.user.UserRepository;
 import com.gshop.common.entity.User;
 
-
 public class ShopmeUserDetailsService implements UserDetailsService {
 
 	@Autowired

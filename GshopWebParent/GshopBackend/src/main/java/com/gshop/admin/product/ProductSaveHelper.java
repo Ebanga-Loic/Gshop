@@ -16,7 +16,6 @@ import com.gshop.admin.FileUploadUtil;
 import com.gshop.common.entity.Product;
 import com.gshop.common.entity.ProductImage;
 
-
 public class ProductSaveHelper {
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductSaveHelper.class);
 	

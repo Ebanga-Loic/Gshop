@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gshop.admin.user.UserService;
 
-
 @RestController
 public class UserRestController {
 	@Autowired

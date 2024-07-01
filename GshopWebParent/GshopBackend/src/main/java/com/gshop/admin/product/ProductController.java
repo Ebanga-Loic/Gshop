@@ -23,7 +23,7 @@ import com.gshop.admin.security.ShopmeUserDetails;
 import com.gshop.common.entity.Brand;
 import com.gshop.common.entity.Category;
 import com.gshop.common.entity.Product;
-
+import com.gshop.common.exception.ProductNotFoundException;
 
 @Controller
 public class ProductController {

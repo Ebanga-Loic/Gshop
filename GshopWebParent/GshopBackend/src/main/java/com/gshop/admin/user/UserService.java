@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 import com.gshop.common.entity.Role;
 import com.gshop.common.entity.User;
 
-
 @Service
 @Transactional
 public class UserService {

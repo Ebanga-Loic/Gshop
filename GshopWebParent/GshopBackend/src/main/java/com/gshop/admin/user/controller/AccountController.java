@@ -18,7 +18,6 @@ import com.gshop.admin.security.ShopmeUserDetails;
 import com.gshop.admin.user.UserService;
 import com.gshop.common.entity.User;
 
-
 @Controller
 public class AccountController {
 

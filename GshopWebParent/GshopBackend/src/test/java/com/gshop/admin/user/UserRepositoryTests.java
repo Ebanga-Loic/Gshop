@@ -18,7 +18,6 @@ import org.springframework.test.annotation.Rollback;
 import com.gshop.common.entity.Role;
 import com.gshop.common.entity.User;
 
-
 @DataJpaTest(showSql = false)
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)

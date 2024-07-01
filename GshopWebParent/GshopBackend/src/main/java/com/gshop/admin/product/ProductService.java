@@ -14,7 +14,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.gshop.common.entity.Product;
-
+import com.gshop.common.exception.ProductNotFoundException;
 
 @Service
 @Transactional

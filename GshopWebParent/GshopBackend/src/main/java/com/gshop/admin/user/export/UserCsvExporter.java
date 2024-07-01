@@ -12,7 +12,6 @@ import org.supercsv.prefs.CsvPreference;
 import com.gshop.admin.AbstractExporter;
 import com.gshop.common.entity.User;
 
-
 public class UserCsvExporter extends AbstractExporter {
 	
 	public void export(List<User> listUsers, HttpServletResponse response) throws IOException {
