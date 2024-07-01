@@ -1,4 +1,4 @@
-package com.gshop.site;
+package com.gshop;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,6 +15,7 @@ public class MvcConfig implements WebMvcConfigurer {
 		exposeDirectory("../category-images", registry);
 		exposeDirectory("../brand-logos", registry);
 		exposeDirectory("../product-images", registry);
+		exposeDirectory("../site-logo", registry);
 	}
 	
 	private void exposeDirectory(String pathPattern, ResourceHandlerRegistry registry) {

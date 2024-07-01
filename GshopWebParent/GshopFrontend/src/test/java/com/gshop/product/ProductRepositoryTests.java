@@ -9,8 +9,6 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import com.gshop.common.entity.Product;
-import com.gshop.site.product.ProductRepository;
-
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)

@@ -1,4 +1,4 @@
-package com.gshop.site;
+package com.gshop;
 
 import java.util.List;
 
@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.gshop.category.CategoryService;
 import com.gshop.common.entity.Category;
-import com.gshop.site.category.CategoryService;
-
-
 
 @Controller
 public class MainController {

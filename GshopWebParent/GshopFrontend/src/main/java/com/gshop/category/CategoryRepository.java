@@ -1,4 +1,4 @@
-package com.gshop.site.category;
+package com.gshop.category;
 
 import java.util.List;
 
@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.gshop.common.entity.Category;
-
 
 public interface CategoryRepository extends CrudRepository<Category, Integer> {
 

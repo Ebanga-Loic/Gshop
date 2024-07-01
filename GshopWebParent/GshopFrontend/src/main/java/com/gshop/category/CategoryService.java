@@ -1,4 +1,4 @@
-package com.gshop.site.category;
+package com.gshop.category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.gshop.common.entity.Category;
 import com.gshop.common.exception.CategoryNotFoundException;
-
 
 @Service
 public class CategoryService {

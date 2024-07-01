@@ -1,4 +1,4 @@
-package com.gshop.admin.setting.state;
+package com.gshop.common.entity;
 
 public class StateDTO {
 	private Integer id;

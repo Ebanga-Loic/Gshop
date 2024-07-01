@@ -1,4 +1,4 @@
-package com.gshop.site.product;
+package com.gshop.product;
 
 import java.util.List;
 
@@ -10,12 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.gshop.category.CategoryService;
 import com.gshop.common.entity.Category;
 import com.gshop.common.entity.Product;
 import com.gshop.common.exception.CategoryNotFoundException;
 import com.gshop.common.exception.ProductNotFoundException;
-import com.gshop.site.category.CategoryService;
-
 
 @Controller
 public class ProductController {
