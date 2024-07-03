@@ -1,0 +1,34 @@
+server:
+  port: 80
+  servlet:
+    context-path: /Gshop
+spring:
+  datasource:
+    password: 20arnaud
+    url: jdbc:mysql://localhost:3306/gshop?serverTimezone=EST5EDT
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+    
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 3214483449-6q2fum73jc46r2mve7s1jm2rmsgqri6p.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+            - email
+            - profile
+          facebook:
+            client-id: 361433683015970
+            client-secret: 55b2da07e9b78be34f7bcd43a1e183a5
+            scope:
+            - email
+            - public_profile
