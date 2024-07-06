@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gshop.common.entity.Setting;
-import com.gshop.common.entity.SettingCategory;
+import com.gshop.common.entity.setting.Setting;
+import com.gshop.common.entity.setting.SettingCategory;
 
 @Service
 public class SettingService {

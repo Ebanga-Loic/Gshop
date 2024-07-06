@@ -1,4 +1,4 @@
-package com.gshop.common.entity;
+package com.gshop.common.entity.setting;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

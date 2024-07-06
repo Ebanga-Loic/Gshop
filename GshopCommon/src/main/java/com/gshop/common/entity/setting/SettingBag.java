@@ -1,4 +1,4 @@
-package com.gshop.common.entity;
+package com.gshop.common.entity.setting;
 
 import java.util.List;
 

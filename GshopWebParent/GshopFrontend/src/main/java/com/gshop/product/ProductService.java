@@ -6,7 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import com.gshop.common.entity.Product;
+import com.gshop.common.entity.product.Product;
 import com.gshop.common.exception.ProductNotFoundException;
 
 @Service

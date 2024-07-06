@@ -2,8 +2,8 @@ package com.gshop.admin.setting;
 
 import java.util.List;
 
-import com.gshop.common.entity.Setting;
-import com.gshop.common.entity.SettingBag;
+import com.gshop.common.entity.setting.Setting;
+import com.gshop.common.entity.setting.SettingBag;
 
 public class GeneralSettingBag extends SettingBag {
 

@@ -1,4 +1,4 @@
-package com.gshop.common.entity;
+package com.gshop.common.entity.product;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,21 +10,19 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.gshop.common.entity.Brand;
+import com.gshop.common.entity.Category;
+import com.gshop.common.entity.IdBasedEntity;
+
 @Entity
 @Table(name = "products")
-public class Product {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+public class Product extends IdBasedEntity {
 	
 	@Column(unique = true, length = 256, nullable = false)
 	private String name;
@@ -78,12 +76,12 @@ public class Product {
 	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<ProductDetail> details = new ArrayList<>();
 
-	public Integer getId() {
-		return id;
+	
+	public Product(Integer id) {
+		this.id = id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public Product() {
 	}
 
 	public String getName() {

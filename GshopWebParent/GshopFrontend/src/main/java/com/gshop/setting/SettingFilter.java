@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.gshop.common.entity.Setting;
+import com.gshop.common.entity.setting.Setting;
 
 @Component
 public class SettingFilter implements Filter {
@@ -38,6 +38,7 @@ public class SettingFilter implements Filter {
 		
 		generalSettings.forEach(setting -> {
 			request.setAttribute(setting.getKey(), setting.getValue());
+			System.out.println(setting.getKey() + " == > " + setting.getValue());
 		});
 		
 		chain.doFilter(request, response);
