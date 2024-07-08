@@ -1,4 +1,4 @@
-package com.gshop.admin.order;
+package com.gshop.common.exception;
 
 public class OrderNotFoundException extends Exception {
 
