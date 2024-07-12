@@ -53,7 +53,7 @@ public class ProductImage extends IdBasedEntity {
 	
 	@Transient
 	public String getImagePath() {
-		return "/product-images/" + product.getId() + "/extras/" + this.name;
+		return   "/product-images/" + product.getId() + "/extras/" + this.name;
 	}
 	
 }

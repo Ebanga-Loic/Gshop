@@ -11,11 +11,13 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.gshop.common.entity.setting.Setting;
 
 @Component
+@Order(-123)
 public class SettingFilter implements Filter {
 
 	@Autowired

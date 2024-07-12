@@ -12,6 +12,7 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
 @Entity
 @Table(name = "categories")
 public class Category extends IdBasedEntity {

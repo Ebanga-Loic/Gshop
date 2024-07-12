@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.gshop.ControllerHelper;
 import com.gshop.Utility;
 import com.gshop.address.AddressService;
 import com.gshop.checkout.paypal.PayPalApiException;
@@ -27,7 +28,6 @@ import com.gshop.common.entity.Customer;
 import com.gshop.common.entity.ShippingRate;
 import com.gshop.common.entity.order.Order;
 import com.gshop.common.entity.order.PaymentMethod;
-import com.gshop.customer.CustomerService;
 import com.gshop.order.OrderService;
 import com.gshop.setting.CurrencySettingBag;
 import com.gshop.setting.EmailSettingBag;
@@ -40,7 +40,7 @@ import com.gshop.shoppingcart.ShoppingCartService;
 public class CheckoutController {
 
 	@Autowired private CheckoutService checkoutService;
-	@Autowired private CustomerService customerService;
+	@Autowired private ControllerHelper controllerHelper;
 	@Autowired private AddressService addressService;
 	@Autowired private ShippingRateService shipService;
 	@Autowired private ShoppingCartService cartService;
@@ -50,7 +50,7 @@ public class CheckoutController {
 	
 	@GetMapping("/checkout")
 	public String showCheckoutPage(Model model, HttpServletRequest request) {
-		Customer customer = getAuthenticatedCustomer(request);
+		Customer customer = controllerHelper.getAuthenticatedCustomer(request);
 		
 		Address defaultAddress = addressService.getDefaultAddress(customer);
 		ShippingRate shippingRate = null;
@@ -83,18 +83,13 @@ public class CheckoutController {
 		return "checkout/checkout";
 	}
 	
-	private Customer getAuthenticatedCustomer(HttpServletRequest request) {
-		String email = Utility.getEmailOfAuthenticatedCustomer(request);				
-		return customerService.getCustomerByEmail(email);
-	}	
-	
 	@PostMapping("/place_order")
 	public String placeOrder(HttpServletRequest request) 
 			throws UnsupportedEncodingException, MessagingException {
 		String paymentType = request.getParameter("paymentMethod");
 		PaymentMethod paymentMethod = PaymentMethod.valueOf(paymentType);
 		
-		Customer customer = getAuthenticatedCustomer(request);
+		Customer customer = controllerHelper.getAuthenticatedCustomer(request);
 		
 		Address defaultAddress = addressService.getDefaultAddress(customer);
 		ShippingRate shippingRate = null;

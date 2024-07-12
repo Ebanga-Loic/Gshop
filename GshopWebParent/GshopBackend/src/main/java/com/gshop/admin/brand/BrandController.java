@@ -64,7 +64,6 @@ public class BrandController {
 			
 			FileUploadUtil.cleanDir(uploadDir);
 			FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-			
 		} else {
 			brandService.save(brand);
 		}

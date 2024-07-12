@@ -11,6 +11,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
 @Entity
 @Table(name = "brands")
 public class Brand extends IdBasedEntity {
@@ -76,6 +77,6 @@ public class Brand extends IdBasedEntity {
 	public String getLogoPath() {
 		if (this.id == null) return "/images/image-thumbnail.png";
 		
-		return "/brand-logos/" + this.id + "/" + this.logo;		
+		return  "/brand-logos/" + this.id + "/" + this.logo;		
 	}
 }
