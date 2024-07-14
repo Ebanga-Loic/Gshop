@@ -36,11 +36,11 @@ function increaseQuantity(link) {
 		quantityInput = $("#quantity" + productId);
 		newQuantity = parseInt(quantityInput.val()) + 1;
 		
-		if (newQuantity <= 5) {
+		if (newQuantity <= 150) {
 			quantityInput.val(newQuantity);
 			updateQuantity(productId, newQuantity);
 		} else {
-			showWarningModal('Maximum quantity is 5');
+			showWarningModal('Maximum quantity is 150');
 		}	
 }
 
