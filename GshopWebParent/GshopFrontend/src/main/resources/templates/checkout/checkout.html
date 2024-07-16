@@ -117,69 +117,80 @@
 	}
 	
 	paypal.Buttons({
-		enableStandardCardFields: true,
-		createOrder: function(data, actions) {
-			// setup a transaction
-			return actions.order.create({
-				
-				intent: 'CAPTURE', // make payment immediately
-				payer: {
-					name: {
-					given_name: "[[${customer.firstName}]]",
-					surname: "[[${customer.lastName}]]"
-					},
-				
-					address: {
-						address_line_1: "[[${customer.addressLine1}]]",
-						address_line_2: "[[${customer.addressLine2}]]",
-						admin_area_1: "[[${customer.state}]]",
-						admin_area_2: "[[${customer.city}]]",
-						postal_code: "[[${customer.postalCode}]]",
-						country_code: "[[${customer.country.code}]]"
-					},
-					
-					email_address: "[[${customer.email}]]",
-					
-					phone: {
-						phone_type: "MOBILE",
-						phone_number: {
-							national_number: "[[${customer.phoneNumber}]]"
-						}
-					}
-				},
-				
-				purchase_units: [{
-					amount: {
-						value: "[[${checkoutInfo.paymentTotal4PayPal}]]",
-						currency_code: "[[${currencyCode}]]"
-					}
-				}],
-				
-				application_context: {
-					shipping_preference: "NO_SHIPPING"
-				}
-			});
-		},
-		
-		onApprove: function(data, actions) {
-			// buyer approved payment
-			return actions.order.capture().then(function(details) {
-				//console.log(details);
-				orderId = details.id;
-				validateOrder(orderId);				
-			});
-		},
-		
-		onCancel: function(data) {
-			// buyer cancelled payment
-			alert('Payment cancelled by the buyer');
-		},
-		
-		onError: function(err) {
-			// error that prevents buyer from doing checkout
-			showErrorModal("Something wrong with your address information, so payment will not work.");
-		}
-	}).render("#paypal-button-container");
+    enableStandardCardFields: true,
+    createOrder: function(data, actions) {
+        // Log the customer data for debugging
+        console.log({
+            given_name: "[[${customer.firstName}]]",
+            surname: "[[${customer.lastName}]]",
+            address_line_1: "[[${customer.addressLine1}]]",
+            address_line_2: "[[${customer.addressLine2}]]",
+            admin_area_1: "[[${customer.state}]]",
+            admin_area_2: "[[${customer.city}]]",
+            postal_code: "[[${customer.postalCode}]]",
+            country_code: "[[${customer.country.code}]]",
+            email_address: "[[${customer.email}]]",
+            phone_number: "[[${customer.phoneNumber}]]"
+        });
+
+        // Use static values for testing
+        return actions.order.create({
+            intent: 'CAPTURE', // make payment immediately
+            payer: {
+                name: {
+                    given_name: "John",
+                    surname: "Doe"
+                },
+                address: {
+                    address_line_1: "123 Main St",
+                    address_line_2: "Apt 4B",
+                    admin_area_1: "NY",
+                    admin_area_2: "New York",
+                    postal_code: "10001",
+                    country_code: "US"
+                },
+                email_address: "john.doe@example.com",
+                phone: {
+                    phone_type: "MOBILE",
+                    phone_number: {
+                        national_number: "1234567890"
+                    }
+                }
+            },
+            purchase_units: [{
+                amount: {
+                    value: "10.00",
+                    currency_code: "USD"
+                }
+            }],
+            application_context: {
+                shipping_preference: "NO_SHIPPING"
+            }
+        }).catch(function(err) {
+            console.error('create_order_error', err);
+        });
+    },
+    
+    onApprove: function(data, actions) {
+        // buyer approved payment
+        return actions.order.capture().then(function(details) {
+            //console.log(details);
+            orderId = details.id;
+            validateOrder(orderId);                
+        });
+    },
+    
+    onCancel: function(data) {
+        // buyer cancelled payment
+        alert('Payment cancelled by the buyer');
+    },
+    
+    onError: function(err) {
+        // error that prevents buyer from doing checkout
+        showErrorModal("Something wrong with your address information, so payment will not work.");
+        console.error('onError', err);
+    }
+}).render("#paypal-button-container");
 	
 </script>
 </body>
